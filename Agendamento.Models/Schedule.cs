@@ -1,20 +1,27 @@
 using System;
 using Agendamento.Models.Enums;
+using Agendamento.Shared.Entity;
+using Flunt.Validations;
 
 namespace Agendamento.Models
 {
-    public class Schedule
+    public class Schedule : Entity
     {
         public Schedule(Client client){
-            this.Id = Guid.NewGuid();
             this.Client = client;
+            if(Client == null)
+            {
+                AddNotifications( new Contract()
+                    .Requires()
+                    .IsTrue(Client == null, "Schedule.Client", "O client não pode ser nulo")
+
+                );
+            }
         }
 
         public Schedule(){
 
         }
-
-        public Guid Id { get; set; }
 
         public Client Client {get; set;}
 

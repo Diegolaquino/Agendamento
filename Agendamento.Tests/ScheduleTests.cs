@@ -11,9 +11,9 @@ namespace Agendamento.Tests
         [TestMethod]
         public void ShouldReturnErrorWhenScheduleHasNoClient()
         {
-            var _schedule = ScheduleFactory.CreateSchedule();
+            var _schedule = ScheduleFactory.CreateSchedule(null);
 
-            Assert.True();
+            Assert.IsTrue(_schedule.Client == null, "O cliente está nulo");
         }
     }
 }
