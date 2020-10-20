@@ -6,7 +6,7 @@ namespace Agendamento.Tests
     public class ScheduleTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Teste()
         {
             Assert.Fail();
         }
