@@ -1,14 +1,19 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Agendamento.Models;
+using Agendamento.Tests.Factory;
 
 namespace Agendamento.Tests
 {
     [TestClass]
     public class ScheduleTests
     {
+        
         [TestMethod]
-        public void Teste()
+        public void ShouldReturnErrorWhenScheduleHasNoClient()
         {
-            Assert.Fail();
+            var _schedule = ScheduleFactory.CreateSchedule();
+
+            Assert.True();
         }
     }
 }
