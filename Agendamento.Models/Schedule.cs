@@ -1,22 +1,24 @@
 using System;
 using Agendamento.Models.Enums;
 using Agendamento.Shared.Entity;
+using Flunt.Notifications;
 using Flunt.Validations;
 
 namespace Agendamento.Models
 {
-    public class Schedule : Entity
+    public class Schedule : Entity, IValidatable
     {
         public Schedule(Client client){
             this.Client = client;
-            if(Client == null)
-            {
-                AddNotifications( new Contract()
-                    .Requires()
-                    .IsTrue(Client == null, "Schedule.Client", "O client não pode ser nulo")
+        }
 
-                );
-            }
+        public void Validate(){
+           
+            AddNotifications( new Contract()
+                .IsNotNull(Client, "Schedule.Client", "O client não pode ser nulo")
+
+            );
+        
         }
 
         public Schedule(){

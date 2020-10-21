@@ -9,11 +9,12 @@ namespace Agendamento.Tests
     {
         
         [TestMethod]
-        public void ShouldReturnErrorWhenScheduleHasNoClient()
+        public void Dado_um_agendamento_sem_cliente_ele_deve_ser_invalido()
         {
             var _schedule = ScheduleFactory.CreateSchedule(null);
+            _schedule.Validate();
 
-            Assert.IsTrue(_schedule.Client == null, "O cliente está nulo");
+            Assert.AreEqual(true, _schedule.Invalid);
         }
     }
 }
