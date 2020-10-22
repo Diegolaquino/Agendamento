@@ -40,19 +40,19 @@ export default function Table(){
                     <div>
                         <form className="uk-form-stacked">
                             <div className="uk-margin">
-                                <label className="uk-form-label" for="name">Nome</label>
+                                <label className="uk-form-label" htmlFor="name">Nome</label>
                                 <div className="uk-form-controls">
                                     <input className="uk-input uk-form-width-large" type="text" />
                                 </div>
                             </div>
                             <div className="uk-margin">
-                                <label className="uk-form-label" for="email">Email</label>
+                                <label className="uk-form-label" htmlFor="email">Email</label>
                                 <div className="uk-form-controls">
                                     <input className="uk-input uk-form-width-large" type="email" />
                                 </div>
                             </div>
                             <div className="uk-margin">
-                                <label className="uk-form-label" for="phone">Telefone</label>
+                                <label className="uk-form-label" htmlFor="phone">Telefone</label>
                                 <div className="uk-form-controls">
                                     <input className="uk-input uk-form-width-large" type="phone" />
                                 </div>
