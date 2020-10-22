@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Table(){
     return (
-        <table className="uk-table uk-table-divider">
+        <table className="uk-table uk-table-divider uk-table-hover">
             <caption><h1>Agendamentos</h1></caption>
             <thead>
                 <tr>

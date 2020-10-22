@@ -1,0 +1,17 @@
+.table-clients{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.table-clients h1{
+    text-align: center;
+    font-size: 25px;
+}
+
+.table-clients thead th{
+    text-align: center;
+}
+
+.table-clients caption{
+    text-align: center;
+}

@@ -1,29 +1,29 @@
 import React from 'react';
+import './Menu.css';
 
 function Menu(props){
     const logo = props.logo;
-    const teste = "#";
     return(
-        <nav className="uk-navbar-container uk-margin" uk-navbar>
-        <div className="uk-navbar-left menu">
+        <nav id="menu" className="uk-navbar-container uk-margin" uk-navbar="true">
+        <div className="uk-navbar-left">
 
         <img className="uk-navbar-item uk-logo app-logo" src={logo} alt="logo"/>
 
         <ul className="uk-navbar-nav">
             <li>
-                <a href={teste}>
+                <a href="/">
                     <span className="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
                     Agendamentos
                 </a>
             </li>
             <li>
-                <a href={teste}>
+                <a href="/services">
                     <span className="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
                     Serviços
                 </a>
             </li>
             <li>
-                <a href={teste}>
+                <a href="/clients">
                     <span className="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
                     Clientes
                 </a>
