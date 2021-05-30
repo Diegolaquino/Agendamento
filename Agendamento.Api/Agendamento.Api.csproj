@@ -1,6 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Agendamento.Data\Agendamento.Data.csproj" />
     <ProjectReference Include="..\Agendamento.Models\Agendamento.Models.csproj" />
   </ItemGroup>

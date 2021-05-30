@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Agendamento.Data;
+using Microsoft.OpenApi.Models;
 
 namespace Agendamento.Api
 {
@@ -39,6 +40,23 @@ namespace Agendamento.Api
             });
             
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Schedule API",
+                    Version = "v1",
+                    Description = "Api de agendamentos.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Diego Aquino",
+                        Email = "diegol.aquino@gmail.com",
+                        Url = new Uri("https://nezoo.com.br/"),
+                    },
+                });
+            });
+
             services.AddDbContext<DataContext>(opt =>
             {
                 opt.UseInMemoryDatabase("Database");
@@ -52,6 +70,23 @@ namespace Agendamento.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+     
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Schedule API V1");
+
+            
+
+                // To serve SwaggerUI at application's root page, set the RoutePrefix property to an empty string.
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
