@@ -82,8 +82,6 @@ namespace Agendamento.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Schedule API V1");
 
-            
-
                 // To serve SwaggerUI at application's root page, set the RoutePrefix property to an empty string.
                 c.RoutePrefix = string.Empty;
             });
