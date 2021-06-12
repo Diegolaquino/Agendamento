@@ -1,4 +1,5 @@
 using Agendamento.Models;
+using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace Agendamento.Data
@@ -13,5 +14,10 @@ namespace Agendamento.Data
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<Service> Services { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Ignore<Notification>();
+        }
     }
 }

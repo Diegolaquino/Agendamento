@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Agendamento.Data;
@@ -94,7 +95,7 @@ namespace Agendamento.Api.Controllers
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<ActionResult<Client>> Delete(
-            int id, 
+            Guid id, 
             [FromServices] DataContext context
         ){
            var client = await context.Clients.FirstOrDefaultAsync(c => c.Id == id);

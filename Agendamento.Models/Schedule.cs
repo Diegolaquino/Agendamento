@@ -12,6 +12,11 @@ namespace Agendamento.Models
             this.Client = client;
         }
 
+        public Schedule()
+        {
+
+        }
+
         public void Validate(){
            
             AddNotifications( new Contract()
@@ -19,10 +24,6 @@ namespace Agendamento.Models
 
             );
         
-        }
-
-        public Schedule(){
-
         }
 
         public Client Client {get; set;}
